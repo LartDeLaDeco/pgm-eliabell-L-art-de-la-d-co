@@ -21,7 +21,7 @@ export default function Contact() {
             <span className="text-primary">📧</span>
             <a
               href="mailto:LArtDeLaDeco68@outlook.fr?subject=Demande%20de%20devis"
-              className="underline hover:text-primary transition-colors"
+              className="no-underline hover:text-primary transition-colors"
             >
               LArtDeLaDeco68@outlook.fr
             </a>
@@ -37,7 +37,7 @@ export default function Contact() {
             <a
               href="https://wa.me/33759564619"
               target="_blank"
-              className="underline hover:text-primary transition-colors"
+              className="no-underline hover:text-primary transition-colors"
             >
               WhatsApp
             </a>
@@ -46,4 +46,4 @@ export default function Contact() {
       </div>
     </section>
   )
-} 
+}

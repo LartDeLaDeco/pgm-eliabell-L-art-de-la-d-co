@@ -1,4 +1,4 @@
-export default function ImageModel({ image, onClose, onNext, onPrev, showArrows }) {
+export default function ImageModel({ image, onClose, onNext, onPrev, showArrows, title }) {
   if (!image) return null;
 
   const handleKeyDown = (e) => {
@@ -14,6 +14,13 @@ export default function ImageModel({ image, onClose, onNext, onPrev, showArrows 
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
+      {/* Title */}
+      {title && (
+        <div className="absolute top-4 left-4 text-white text-lg font-medium z-10">
+          {title}
+        </div>
+      )}
+
       {/* Previous Arrow */}
       {showArrows && (
         <button
@@ -21,7 +28,7 @@ export default function ImageModel({ image, onClose, onNext, onPrev, showArrows 
             e.stopPropagation();
             onPrev();
           }}
-          className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-primary text-4xl z-10 p-2"
+          className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-primary text-4xl z-10 p-2 transition-colors"
         >
           ←
         </button>
@@ -41,7 +48,7 @@ export default function ImageModel({ image, onClose, onNext, onPrev, showArrows 
             e.stopPropagation();
             onNext();
           }}
-          className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-primary text-4xl z-10 p-2"
+          className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-primary text-4xl z-10 p-2 transition-colors"
         >
           →
         </button>
@@ -50,7 +57,7 @@ export default function ImageModel({ image, onClose, onNext, onPrev, showArrows 
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 text-white hover:text-primary text-3xl z-10 p-2"
+        className="absolute top-4 right-4 text-white hover:text-primary text-3xl z-10 p-2 transition-colors"
       >
         ×
       </button>

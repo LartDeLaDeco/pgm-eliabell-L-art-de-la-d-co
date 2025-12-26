@@ -1,39 +1,68 @@
-export default function ForWhom() {
+export default function Services() {
   return (
     <section className="bg-lightRose py-24 px-10 md:px-20 relative overflow-hidden">
-      {/* Floral background patterns */}
+      {/* Decorative backgrounds */}
       <div className="absolute inset-0 bg-vine-pattern opacity-20"></div>
-      <div className="absolute top-0 left-0 w-full h-full bg-floral-light opacity-25"></div>
-      
-      {/* Subtle decorative elements */}
+      <div className="absolute inset-0 bg-floral-light opacity-25"></div>
+
+      {/* Decorative shapes */}
       <div className="absolute top-16 right-16 w-24 h-24 border border-rose/20 rounded-full"></div>
       <div className="absolute bottom-16 left-16 w-16 h-16 bg-primary/10 rounded-full"></div>
-      <div className="absolute top-40 left-1/4 w-32 h-32 bg-rose-pattern opacity-30 rounded-full"></div>
-      <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-vine-pattern opacity-25 rounded-full"></div>
-      
+
       <div className="relative z-10">
-        <h3 className="text-4xl font-serif text-primary mb-12 text-center">
-          TEXT TEXT TEXT 
+        <h3 className="text-4xl font-serif text-primary mb-16 text-center">
+          Nos services
         </h3>
 
-        <div className="grid md:grid-cols-2 gap-12 text-gray-700 max-w-4xl mx-auto">
-          <div className="bg-white/70 p-8 rounded-lg shadow-sm backdrop-blur-sm border border-white/20">
-            <p>
-              <strong className="text-primary">Pour les particuliers</strong> qui organisent un événement
-              (soirée henné, fiançailles, mariages, demandes en mariage)
-              et recherchent une décoration adaptée à leur budget et à leurs envies.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          
+          {/* Service card */}
+          <ServiceCard
+            title="Soirée Henné"
+            text="Décoration complète pour une soirée henné chaleureuse et fidèle aux traditions, avec mise en place des tables, du coin de la mariée et des éléments décoratifs."
+          />
 
-          <div className="bg-white/70 p-8 rounded-lg shadow-sm backdrop-blur-sm border border-white/20">
-            <p>
-              <strong className="text-primary">Pour les entreprises</strong> qui souhaitent une décoration
-              pensée pour leurs événements professionnels
-              (soirées, séminaires, fêtes).
-            </p>
-          </div>
+          <ServiceCard
+            title="Demande en mariage"
+            text="Création d’une ambiance élégante et romantique pour sublimer votre demande en mariage et marquer ce moment unique."
+          />
+
+          <ServiceCard
+            title="Fiançailles"
+            text="Décoration personnalisée pour vos fiançailles, pensée selon votre style, vos envies et votre budget."
+          />
+
+          <ServiceCard
+            title="Mariage"
+            text="Décoration de mariage harmonieuse et raffinée, pour une atmosphère accueillante et inoubliable le jour J."
+          />
+
+          <ServiceCard
+            title="Catering à table"
+            text="Service de catering avec plats simples ou élaborés, présentés avec soin pour que vos invités se sentent accueillis."
+          />
+
+          <ServiceCard
+            title="Demandes sur mesure"
+            text="Vous avez une idée précise ou un besoin particulier ? Nous adaptons la décoration et les services selon votre demande."
+          />
+
         </div>
       </div>
     </section>
-  )
+  );
+}
+
+/* Reusable card */
+function ServiceCard({ title, text }) {
+  return (
+    <div className="bg-white/70 p-8 rounded-lg shadow-sm backdrop-blur-sm border border-white/20 hover:shadow-md transition">
+      <h4 className="text-xl font-serif text-primary mb-4">
+        {title}
+      </h4>
+      <p className="text-gray-700 text-sm leading-relaxed">
+        {text}
+      </p>
+    </div>
+  );
 }

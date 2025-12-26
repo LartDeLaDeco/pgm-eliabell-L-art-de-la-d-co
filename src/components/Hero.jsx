@@ -1,4 +1,14 @@
 export default function Hero() {
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section className="min-h-screen grid md:grid-cols-2 bg-gradient-to-br from-warmWhite via-lightRose to-soft relative overflow-hidden">
       
@@ -25,8 +35,22 @@ export default function Hero() {
           <span className="font-medium text-primary">Particuliers & Entreprises</span>
         </p>
 
+        {/* About section */}
+        <div className="mt-8 p-6 bg-white/50 backdrop-blur-sm rounded-lg border border-white/30 max-w-lg">
+          <h3 className="text-xl font-serif text-primary mb-3">À propos</h3>
+          <p className="text-gray-600 text-sm leading-relaxed">
+            Nous créons des décorations sur-mesure pour tous vos événements spéciaux. 
+            De l'intime soirée de fiançailles au mariage de rêve, en passant par les 
+            événements d'entreprise, nous donnons vie à vos idées avec passion et créativité. 
+            Chaque décoration est unique et adaptée à votre budget.
+          </p>
+        </div>
+
         {/* Call to action button */}
-        <button className="mt-8 px-8 py-3 bg-primary hover:bg-primary/90 text-white rounded-full font-medium transition-all shadow-lg hover:shadow-xl w-fit">
+        <button 
+          onClick={scrollToServices}
+          className="mt-6 px-8 py-3 bg-primary hover:bg-primary/90 text-white rounded-full font-medium transition-all shadow-lg hover:shadow-xl w-fit"
+        >
           Découvrir nos créations
         </button>
       </div>

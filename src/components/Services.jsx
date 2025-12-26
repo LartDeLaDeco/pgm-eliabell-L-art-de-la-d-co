@@ -1,83 +1,158 @@
 import { useState } from "react";
 import ImageModel from "./ImageModel";
 
-const images = [
-    "https://images.unsplash.com/photo-1523438885200-e635ba2c371e",
-    "https://images.unsplash.com/photo-1519741497674-611481863552",
-    "https://images.unsplash.com/photo-1526045478516-99145907023c",
-    "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
-    "https://images.unsplash.com/photo-1494526585095-c41746248156",
-    "/src/assets/images/Red1.jpg",
-    "/src/assets/images/Red2.jpg",
-    "/src/assets/images/Red3.jpg",
-    "/src/assets/images/Red4.jpg",
-    "/src/assets/images/Red5.jpg",
-    "/src/assets/images/Red6.jpg",
-    "/src/assets/images/Red7.jpg",
-    "/src/assets/images/Red8.jpg",
-    "/src/assets/images/Pink1.jpg",
-];
+// Organize images by categories/albums
+const albums = {
+  mariages: {
+    title: "Mariages",
+    description: "Des décorations élégantes et romantiques pour faire de votre mariage un moment inoubliable. Chaque détail est pensé pour créer l'atmosphère parfaite de votre jour J.",
+    coverImage: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e",
+    images: [
+      "https://images.unsplash.com/photo-1523438885200-e635ba2c371e",
+      "https://images.unsplash.com/photo-1519741497674-611481863552",
+      "/src/assets/images/Red1.jpg",
+      "/src/assets/images/Red2.jpg",
+      "/src/assets/images/Red3.jpg"
+    ]
+  },
+  fiancailles: {
+    title: "Fiançailles",
+    description: "Célébrez votre engagement avec une décoration sur-mesure qui reflète votre histoire d'amour. Des ambiances intimes et chaleureuses pour marquer ce moment précieux.",
+    coverImage: "https://images.unsplash.com/photo-1526045478516-99145907023c",
+    images: [
+      "https://images.unsplash.com/photo-1526045478516-99145907023c",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
+      "/src/assets/images/Red4.jpg",
+      "/src/assets/images/Red5.jpg",
+      "/src/assets/images/Pink1.jpg"
+    ]
+  },
+  entreprises: {
+    title: "Événements d'entreprise",
+    description: "Des décorations professionnelles et raffinées pour vos événements corporate. Séminaires, soirées d'entreprise, lancements de produits - nous créons l'ambiance parfaite.",
+    coverImage: "https://images.unsplash.com/photo-1494526585095-c41746248156",
+    images: [
+      "https://images.unsplash.com/photo-1494526585095-c41746248156",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+      "/src/assets/images/Red6.jpg",
+      "/src/assets/images/Red7.jpg",
+      "/src/assets/images/Red8.jpg"
+    ]
+  }
+};
 
 export default function Services() {
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedAlbum, setSelectedAlbum] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const handleImageClick = (albumKey) => {
+    setSelectedAlbum(albumKey);
+    setSelectedImageIndex(0);
+  };
 
   const handleNext = () => {
-    setSelectedIndex((prev) => (prev + 1) % images.length);
+    if (selectedAlbum) {
+      const album = albums[selectedAlbum];
+      setSelectedImageIndex((prev) => (prev + 1) % album.images.length);
+    }
   };
 
   const handlePrev = () => {
-    setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
+    if (selectedAlbum) {
+      const album = albums[selectedAlbum];
+      setSelectedImageIndex((prev) => (prev - 1 + album.images.length) % album.images.length);
+    }
+  };
+
+  const handleClose = () => {
+    setSelectedAlbum(null);
+    setSelectedImageIndex(0);
   };
 
   return (
-    <section className="py-24 px-10 md:px-20 bg-gradient-to-br from-warmWhite to-soft relative overflow-hidden">
-      {/* Layered floral backgrounds */}
+    <section id="services" className="py-24 bg-gradient-to-br from-warmWhite to-soft relative overflow-hidden">
+      {/* Background patterns */}
       <div className="absolute inset-0 bg-subtle-pattern opacity-40"></div>
       <div className="absolute inset-0 bg-rose-pattern opacity-20"></div>
       
-      {/* Decorative floral elements */}
-      <div className="absolute top-10 right-10 w-32 h-32 border border-primary/10 rounded-full bg-floral-light opacity-30"></div>
-      <div className="absolute bottom-10 left-10 w-20 h-20 bg-vine-pattern opacity-25 rounded-full"></div>
-      <div className="absolute top-1/2 left-20 w-24 h-24 bg-rose-pattern opacity-15 rounded-full"></div>
-      <div className="absolute top-20 left-1/2 w-16 h-16 bg-floral-light opacity-20 rounded-full"></div>
-      
-      <div className="relative z-10">
-        <div className="text-center mb-16">
-          <h3 className="text-4xl font-serif text-primary mb-4">
-            Nos réalisations
-          </h3>
-          <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-gold mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Découvrez quelques-unes de nos créations pour des événements inoubliables
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {images.map((img, index) => (
-            <div 
-              key={img} 
-              className="group cursor-pointer relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
-              onClick={() => setSelectedIndex(index)}
-            >
-              <img
-                src={img}
-                className="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                alt="Décoration"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute inset-2 border border-white/0 group-hover:border-white/50 rounded-lg transition-all duration-300"></div>
-            </div>
-          ))}
-        </div>
+      {/* Header */}
+      <div className="text-center mb-16 px-10 md:px-20">
+        <h3 className="text-4xl font-serif text-primary mb-4">
+          Nos réalisations
+        </h3>
+        <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-gold mx-auto mb-6"></div>
+        <p className="text-gray-600 max-w-2xl mx-auto">
+          Découvrez nos créations pour chaque type d'événement
+        </p>
       </div>
 
-      <ImageModel 
-        image={selectedIndex !== null ? images[selectedIndex] : null}
-        onClose={() => setSelectedIndex(null)}
-        onNext={handleNext}
-        onPrev={handlePrev}
-        showArrows={images.length > 1}
-      />
+      {/* Service sections */}
+      <div className="relative z-10">
+        {Object.entries(albums).map(([key, album], index) => (
+          <div
+            key={key}
+            className={`w-full py-16 px-10 md:px-20 ${
+              index % 2 === 0 ? 'bg-white/30' : 'bg-lightRose/30'
+            }`}
+          >
+            <div className={`max-w-7xl mx-auto flex items-center gap-12 ${
+              index % 2 === 1 ? 'flex-row-reverse' : ''
+            }`}>
+              
+              {/* Text Content */}
+              <div className="flex-1 space-y-6">
+                <h4 className="text-3xl font-serif text-primary">
+                  {album.title}
+                </h4>
+                <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-gold"></div>
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  {album.description}
+                </p>
+                <button
+                  onClick={() => handleImageClick(key)}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-full font-medium transition-all shadow-lg hover:shadow-xl"
+                >
+                  Voir la galerie
+                  <span>→</span>
+                </button>
+              </div>
+
+              {/* Image */}
+              <div className="flex-1 max-w-md">
+                <div 
+                  className="group cursor-pointer relative overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                  onClick={() => handleImageClick(key)}
+                >
+                  <img
+                    src={album.coverImage}
+                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                    alt={album.title}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-4 border-2 border-white/0 group-hover:border-white/50 rounded-lg transition-all duration-300"></div>
+                  
+                  {/* Play icon overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Image Modal */}
+      {selectedAlbum && (
+        <ImageModel 
+          image={albums[selectedAlbum].images[selectedImageIndex]}
+          onClose={handleClose}
+          onNext={handleNext}
+          onPrev={handlePrev}
+          showArrows={albums[selectedAlbum].images.length > 1}
+          title={`${albums[selectedAlbum].title} - ${selectedImageIndex + 1}/${albums[selectedAlbum].images.length}`}
+        />
+      )}
     </section>
   );
 }
