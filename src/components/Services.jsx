@@ -4,36 +4,44 @@ import ImageModel from "./ImageModel";
 // Organize images by categories/albums
 const albums = {
   mariages: {
-    title: "Mariages",
-    description: "Des décorations élégantes et romantiques pour faire de votre mariage un moment inoubliable. Chaque détail est pensé pour créer l'atmosphère parfaite de votre jour J.",
-    coverImage: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e",
+    title: "Mariages & Fiançailles ",
+    description: "Des décorations élégantes et personnalisées pour le jour le plus important de votre vie. Nous créons des ambiances romantiques et inoubliables qui reflètent votre style et votre histoire d'amour.",
+    coverImage: "/src/assets/images/Pink1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1523438885200-e635ba2c371e",
-      "https://images.unsplash.com/photo-1519741497674-611481863552",
-      "/src/assets/images/Red1.jpg",
-      "/src/assets/images/Red2.jpg",
-      "/src/assets/images/Red3.jpg"
+      "/src/assets/images/Pink1.jpg",
+      "/src/assets/images/red1.jpg",
+      "/src/assets/images/Red4.jpg"
     ]
   },
-  fiancailles: {
-    title: "Fiançailles",
-    description: "Célébrez votre engagement avec une décoration sur-mesure qui reflète votre histoire d'amour. Des ambiances intimes et chaleureuses pour marquer ce moment précieux.",
-    coverImage: "https://images.unsplash.com/photo-1526045478516-99145907023c",
-    images: [
-      "https://images.unsplash.com/photo-1526045478516-99145907023c",
-      "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
-      "/src/assets/images/Red4.jpg",
-      "/src/assets/images/Red5.jpg",
-      "/src/assets/images/Pink1.jpg"
-    ]
-  },
+  // fiancailles: {
+  //   title: "Fiançailles",
+  //   description: "Célébrez votre engagement avec une décoration sur-mesure qui reflète votre histoire d'amour. Des ambiances intimes et chaleureuses pour marquer ce moment précieux.",
+  //   coverImage: "/src/assets/images/Pink1.jpg",
+  //   images: [
+  //     "/src/assets/images/Pink1.jpg",
+  //     "/src/assets/images/red1.jpg",
+  //     "/src/assets/images/Red2.jpg",
+  //     "/src/assets/images/Red3.jpg",
+  //     "/src/assets/images/Red4.jpg"
+  //   ]
+  // },
   entreprises: {
     title: "Événements d'entreprise",
     description: "Des décorations professionnelles et raffinées pour vos événements corporate. Séminaires, soirées d'entreprise, lancements de produits - nous créons l'ambiance parfaite.",
-    coverImage: "https://images.unsplash.com/photo-1494526585095-c41746248156",
+    coverImage: "/src/assets/images/company1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1494526585095-c41746248156",
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+      "/src/assets/images/company1.jpg",
+      "/src/assets/images/company2.jpg",
+      "/src/assets/images/company3.jpg"
+    ]
+  },
+  henna: {
+    title: "Soirées henné",
+    description: "Plongez dans la tradition avec des décorations vibrantes et colorées pour vos soirées henné. Nous créons des ambiances festives et authentiques pour célébrer ce rituel spécial.",
+    coverImage: "/src/assets/images/Red6.jpg",
+    images: [
+      "/src/assets/images/Red2.jpg",
+      "/src/assets/images/Red3.jpg",
       "/src/assets/images/Red6.jpg",
       "/src/assets/images/Red7.jpg",
       "/src/assets/images/Red8.jpg"

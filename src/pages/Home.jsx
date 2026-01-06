@@ -3,6 +3,7 @@ import Hero from "../components/Hero"
 import ForWhom from "../components/ForWhom"
 import Services from "../components/Services"
 import Contact from "../components/Contact"
+import AboutUs from "../components/AboutUs"
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ForWhom />
+      <AboutUs />
       <Services />
       <Contact />
     </>

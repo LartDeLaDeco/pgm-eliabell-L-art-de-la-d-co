@@ -9,7 +9,7 @@ export default function Navbar() {
       <div className="flex gap-4">
         {/* Instagram */}
         <a 
-          href="https://instagram.com" 
+          href="https://www.instagram.com/art.de.la.deco68" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-gray-600 hover:text-primary transition-colors duration-300 p-2"
@@ -21,7 +21,7 @@ export default function Navbar() {
 
         {/* WhatsApp */}
         <a 
-          href="https://wa.me/1234567890" 
+          href="https://wa.me/0759564619" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-gray-600 hover:text-primary transition-colors duration-300 p-2"
