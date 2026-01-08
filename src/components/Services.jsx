@@ -31,8 +31,8 @@ const albums = {
     coverImage: "/images/company1.jpg",
     images: [
       "/images/company1.jpg",
-      "/images/company2.jpg",
-      "/images/company3.jpg"
+      "/Images/company2.jpg",
+      "/Images/company3.jpg"
     ]
   },
   henna: {
