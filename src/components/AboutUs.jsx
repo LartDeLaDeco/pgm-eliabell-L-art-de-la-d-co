@@ -20,7 +20,7 @@ export default function AboutUs() {
           <div className="flex justify-center">
             <div className="text-center">
               <img
-                src="/images/LogoArtDecoTransparent.png"
+                src="images/LogoArtDecoTransparent.png"
                 alt="Logo L'art de la déco"
                 className="max-w-md w-full h-auto mx-auto mb-4"
               />
