@@ -8,8 +8,8 @@ const albums = {
     description: "Des décorations élégantes et personnalisées pour le jour le plus important de votre vie. Nous créons des ambiances romantiques et inoubliables qui reflètent votre style et votre histoire d'amour.",
     coverImage: "/images/Pink1.jpg",
     images: [
-      "/images/Pink1.jpg",
-      "/images/red1.jpg",
+      "assets/images/Pink1.jpg",
+      "assets/images/red1.jpg",
       "/images/Red4.jpg"
     ]
   },
