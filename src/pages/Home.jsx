@@ -4,6 +4,7 @@ import ForWhom from "../components/ForWhom"
 import Services from "../components/Services"
 import Contact from "../components/Contact"
 import AboutUs from "../components/AboutUs"
+import Footer from "../components/Footer"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <AboutUs />
       <Services />
       <Contact />
+      <Footer />
     </>
   )
 }
