@@ -13,26 +13,14 @@ const albums = {
       "/images/Red4.jpg"
     ]
   },
-  // fiancailles: {
-  //   title: "Fiançailles",
-  //   description: "Célébrez votre engagement avec une décoration sur-mesure qui reflète votre histoire d'amour. Des ambiances intimes et chaleureuses pour marquer ce moment précieux.",
-  //   coverImage: "/images/Pink1.jpg",
-  //   images: [
-  //     "/images/Pink1.jpg",
-  //     "/images/red1.jpg",
-  //     "/images/Red2.jpg",
-  //     "/images/Red3.jpg",
-  //     "/images/Red4.jpg"
-  //   ]
-  // },
   entreprises: {
     title: "Événements d'entreprise",
     description: "Des décorations professionnelles et raffinées pour vos événements corporate. Séminaires, soirées d'entreprise, lancements de produits - nous créons l'ambiance parfaite.",
     coverImage: "/images/company1.jpg",
     images: [
       "/images/company1.jpg",
-      "/Images/company2.jpg",
-      "/Images/company3.jpg"
+      "/images/company2.jpg",
+      "/images/company3.jpg"
     ]
   },
   henna: {
