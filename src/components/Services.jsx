@@ -9,7 +9,7 @@ const albums = {
     coverImage: "/images/Pink1.jpg",
     images: [
       "assets/images/Pink1.jpg",
-      "assets/images/red1.jpg",
+      "/assets/images/red1.jpg",
       "/images/Red4.jpg"
     ]
   },
