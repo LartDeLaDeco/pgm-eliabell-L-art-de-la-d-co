@@ -6,45 +6,45 @@ const albums = {
   mariages: {
     title: "Mariages & Fiançailles ",
     description: "Des décorations élégantes et personnalisées pour le jour le plus important de votre vie. Nous créons des ambiances romantiques et inoubliables qui reflètent votre style et votre histoire d'amour.",
-    coverImage: "/src/assets/images/Pink1.jpg",
+    coverImage: "/images/Pink1.jpg",
     images: [
-      "/src/assets/images/Pink1.jpg",
-      "/src/assets/images/red1.jpg",
-      "/src/assets/images/Red4.jpg"
+      "/images/Pink1.jpg",
+      "/images/red1.jpg",
+      "/images/Red4.jpg"
     ]
   },
   // fiancailles: {
   //   title: "Fiançailles",
   //   description: "Célébrez votre engagement avec une décoration sur-mesure qui reflète votre histoire d'amour. Des ambiances intimes et chaleureuses pour marquer ce moment précieux.",
-  //   coverImage: "/src/assets/images/Pink1.jpg",
+  //   coverImage: "/images/Pink1.jpg",
   //   images: [
-  //     "/src/assets/images/Pink1.jpg",
-  //     "/src/assets/images/red1.jpg",
-  //     "/src/assets/images/Red2.jpg",
-  //     "/src/assets/images/Red3.jpg",
-  //     "/src/assets/images/Red4.jpg"
+  //     "/images/Pink1.jpg",
+  //     "/images/red1.jpg",
+  //     "/images/Red2.jpg",
+  //     "/images/Red3.jpg",
+  //     "/images/Red4.jpg"
   //   ]
   // },
   entreprises: {
     title: "Événements d'entreprise",
     description: "Des décorations professionnelles et raffinées pour vos événements corporate. Séminaires, soirées d'entreprise, lancements de produits - nous créons l'ambiance parfaite.",
-    coverImage: "/src/assets/images/company1.jpg",
+    coverImage: "/images/company1.jpg",
     images: [
-      "/src/assets/images/company1.jpg",
-      "/src/assets/images/company2.jpg",
-      "/src/assets/images/company3.jpg"
+      "/images/company1.jpg",
+      "/images/company2.jpg",
+      "/images/company3.jpg"
     ]
   },
   henna: {
     title: "Soirées henné",
     description: "Plongez dans la tradition avec des décorations vibrantes et colorées pour vos soirées henné. Nous créons des ambiances festives et authentiques pour célébrer ce rituel spécial.",
-    coverImage: "/src/assets/images/Red6.jpg",
+    coverImage: "/images/Red6.jpg",
     images: [
-      "/src/assets/images/Red2.jpg",
-      "/src/assets/images/Red3.jpg",
-      "/src/assets/images/Red6.jpg",
-      "/src/assets/images/Red7.jpg",
-      "/src/assets/images/Red8.jpg"
+      "/images/Red2.jpg",
+      "/images/Red3.jpg",
+      "/images/Red6.jpg",
+      "/images/Red7.jpg",
+      "/images/Red8.jpg"
     ]
   }
 };
